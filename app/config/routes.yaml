@@ -1,0 +1,5 @@
+
+api_post_edit:
+    path:       /test
+    controller: App\Controller\DefaultController
+    methods:    GET

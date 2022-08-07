@@ -1,0 +1,20 @@
+imports:
+    - { resource: parameters.yaml }
+
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Kernel.php'
+
+    App\Application\DeeplTranslator:
+        arguments:
+            $apiKey: '%deeplApiKey%'
+            $targetLanguage: '%deeplTargetLanguage%'
+            $domainUrl: '%deeplDomainUrl%'

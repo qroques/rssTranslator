@@ -1,0 +1,10 @@
+parameters:
+    deeplApiKey: '%env(DEEPL_API_KEY)%'
+    env(DEEPL_API_KEY): 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx'
+    deeplTargetLanguage: '%env(DEEPL_TARGET_LANGUAGE)%'
+    env(DEEPL_TARGET_LANGUAGE): 'fr'
+    deeplDomainUrl: '%env(DEEPL_DOMAIN_URL)%'
+    env(DEEPL_DOMAIN_URL): 'api-free.deepl.com'
+
+    SOURCE_RSS_URL: '%env(SOURCE_RSS_URL)%'
+    env(SOURCE_RSS_URL): 'https://feedforall.com/sample.xml'
