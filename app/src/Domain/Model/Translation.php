@@ -2,6 +2,7 @@
 
 namespace App\Domain\Model;
 
-interface Translation {
+interface Translation
+{
     public function __toString(): string;
 }

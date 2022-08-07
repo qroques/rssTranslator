@@ -1,5 +1,6 @@
 imports:
     - { resource: parameters.yaml }
+    - { resource: services/ }
 
 services:
     _defaults:
@@ -18,3 +19,8 @@ services:
             $apiKey: '%deeplApiKey%'
             $targetLanguage: '%deeplTargetLanguage%'
             $domainUrl: '%deeplDomainUrl%'
+
+    App\Controller\DefaultController:
+        arguments:
+            $rssSourceUrl: '%rssSourceUrl%'
+

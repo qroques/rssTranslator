@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    App\Domain\Repository\RssChecksInterface:
+        class: 'App\Doctrine\Repository\RssChecks'

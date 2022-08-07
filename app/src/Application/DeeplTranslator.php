@@ -7,13 +7,15 @@ use App\Domain\Model\Translation;
 use App\Domain\TranslatorInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-class DeeplTranslator implements TranslatorInterface{
+class DeeplTranslator implements TranslatorInterface
+{
     public function __construct(
         private readonly string $apiKey,
         private readonly string $targetLanguage,
         private readonly string $domainUrl,
         private readonly HttpClientInterface $client
-    ) {}
+    ) {
+    }
 
     public function trans(string $text): Translation
     {
@@ -28,12 +30,10 @@ class DeeplTranslator implements TranslatorInterface{
                 'body' => [
                     'auth_key' => $this->apiKey,
                     'target_lang' => $this->targetLanguage,
-                    'text' => $text
+                    'text' => $text,
                 ],
             ]
-
         );
-
 
         return DeeplTranslation::fromDeeplResponse($this->targetLanguage, $text, $response);
     }

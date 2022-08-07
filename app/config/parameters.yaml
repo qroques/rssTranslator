@@ -1,4 +1,10 @@
 parameters:
+    database_host: mysql
+    database_port: ~
+    database_name: '%env(MYSQL_DATABASE)%'
+    database_user: '%env(MYSQL_USER)%'
+    database_password: '%env(MYSQL_PASSWORD)%'
+
     deeplApiKey: '%env(DEEPL_API_KEY)%'
     env(DEEPL_API_KEY): 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx'
     deeplTargetLanguage: '%env(DEEPL_TARGET_LANGUAGE)%'
@@ -6,5 +12,5 @@ parameters:
     deeplDomainUrl: '%env(DEEPL_DOMAIN_URL)%'
     env(DEEPL_DOMAIN_URL): 'api-free.deepl.com'
 
-    SOURCE_RSS_URL: '%env(SOURCE_RSS_URL)%'
+    rssSourceUrl: '%env(SOURCE_RSS_URL)%'
     env(SOURCE_RSS_URL): 'https://feedforall.com/sample.xml'

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping
+    xmlns="https://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://doctrine-project.org/schemas/orm/doctrine-mapping https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+>
+
+    <entity name="App\Domain\Model\RssCheck">
+        <id name="id" type="string" unique="true" />
+
+        <field name="createdAt" type="datetime_immutable" />
+        <field name="lastCheckedAt" type="datetime_immutable" />
+        <field name="hash" type="string" />
+
+        <indexes>
+            <index name="hash_idx" columns="hash"/>
+        </indexes>
+    </entity>
+
+</doctrine-mapping>
