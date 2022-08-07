@@ -1,0 +1,26 @@
+---
+version: 2
+
+updates:
+
+  - directory: .
+    package-ecosystem: composer
+    commit-message:
+      prefix: chore
+      prefix-development: test
+    open-pull-requests-limit: 5
+    schedule:
+      interval: daily
+      time: '00:00'
+      timezone: Europe/Paris
+
+  - directory: .
+    package-ecosystem: docker
+    schedule:
+      interval: daily
+      time: '00:00'
+      timezone: Europe/Paris
+    ignore:
+    - dependency-name: 'php'
+      versions:
+        - '>8.1'
