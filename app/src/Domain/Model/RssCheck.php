@@ -30,7 +30,7 @@ class RssCheck
 
     public function getHash(): string
     {
-        return $this->getHash();
+        return $this->hash;
     }
 
     public function check(): void

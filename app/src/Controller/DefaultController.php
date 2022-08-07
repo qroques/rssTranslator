@@ -18,21 +18,21 @@ class DefaultController extends AbstractController
     public function __invoke(): Response
     {
         // dump(simplexml_load_string(file_get_contents($this->rssSourceUrl)));
-        $currentRssState = file_get_contents($this->rssSourceUrl);
-        $hash = md5($currentRssState);
+        // $currentRssState = file_get_contents($this->rssSourceUrl);
+        // $hash = md5($currentRssState);
 
-        $rssCheck = $this->rssChecks->findOneByHash($hash);
+        // $rssCheck = $this->rssChecks->findOneByHash($hash);
 
-        if ($rssCheck instanceof RssCheck) {
-            $rssCheck->check();
-        } else {
-            $rssCheck = new RssCheck($hash);
-        }
-        $this->rssChecks->add($rssCheck);
+        // if ($rssCheck instanceof RssCheck) {
+        //     $rssCheck->check();
+        // } else {
+        //     $rssCheck = new RssCheck($hash);
+        // }
+        // $this->rssChecks->add($rssCheck);
 
-        dump($rssCheck);
+        // dump($rssCheck);
 
-        $response = new Response(simplexml_load_string(file_get_contents($this->rssSourceUrl)));
+        // $response = new Response(simplexml_load_string(file_get_contents($this->rssSourceUrl)));
         // $response->headers->set('Content-Type', 'text/xml');
         // return $response;
 

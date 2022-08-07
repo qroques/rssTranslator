@@ -1,0 +1,6 @@
+parameters:
+  level: max
+  tmpDir: var/cache/phpstan
+  paths:
+    - src
+  reportUnmatchedIgnoredErrors: false

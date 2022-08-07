@@ -15,6 +15,9 @@ class RssChecker implements RssCheckerInterface
     public function isRssBeenUptated(): bool
     {
         $currentRssState = file_get_contents($this->rssSourceUrl);
+        if (!$currentRssState) {
+            throw new \Exception(sprintf('An error occured while trying to fetch data from %s', $this->rssSourceUrl));
+        }
         $hash = md5($currentRssState);
 
         $rssCheck = $this->rssChecks->findOneByHash($hash);

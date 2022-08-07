@@ -8,6 +8,9 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class RssChecks implements RssChecksInterface
 {
+    /**
+     * @var \Doctrine\ORM\EntityRepository<RssCheck>
+     */
     private \Doctrine\ORM\EntityRepository $innerRepository;
 
     public function __construct(private readonly EntityManagerInterface $entityManager)
