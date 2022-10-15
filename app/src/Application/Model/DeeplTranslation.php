@@ -18,7 +18,6 @@ class DeeplTranslation implements Translation
     public static function fromDeeplResponse(string $translatedLocale, string $originalText, ResponseInterface $deeplResponse): self
     {
         if (200 !== $deeplResponse->getStatusCode()) {
-            dump($deeplResponse->getStatusCode());
             throw new InvalidArgumentException('Cannot build object Translation because response is not valid');
         }
 

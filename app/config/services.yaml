@@ -24,3 +24,9 @@ services:
         arguments:
             $rssSourceUrl: '%rssSourceUrl%'
 
+
+    App\Application\LivesquawkClient:
+        arguments:
+            $livesquawkUrl: '%livesquawkUrl%'
+            $livesquawkAuthKey: '%livesquawkAuthKey%'
+

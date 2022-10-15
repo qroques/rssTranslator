@@ -14,3 +14,8 @@ parameters:
 
     rssSourceUrl: '%env(SOURCE_RSS_URL)%'
     env(SOURCE_RSS_URL): 'https://feedforall.com/sample.xml'
+
+    livesquawkUrl: '%env(PROVIDER_URL)%'
+    env(PROVIDER_URL): '-'
+    livesquawkAuthKey: '%env(PROVIDER_AUTH_KEY)%'
+    env(PROVIDER_AUTH_KEY): 'changeme'
