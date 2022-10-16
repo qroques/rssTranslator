@@ -16,7 +16,7 @@ class LivesquawkClient
 
     /**
      * @param integer|null $id
-     * @return array<string, string>
+     * @return array<string, mixed>
      */
     public function getAllFrom(?int $id = null): array
     {

@@ -30,3 +30,4 @@ services:
             $livesquawkUrl: '%livesquawkUrl%'
             $livesquawkAuthKey: '%livesquawkAuthKey%'
 
+    App\Application\LivesquawkNewsProvider: ~

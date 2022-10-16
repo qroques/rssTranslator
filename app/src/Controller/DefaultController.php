@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Application\LivesquawkClient;
-use App\Domain\Model\RssCheck;
+use App\Domain\NewsProviderInterface;
 use App\Domain\Repository\RssChecksInterface;
 use App\Domain\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,14 +16,24 @@ class DefaultController extends AbstractController
         private readonly TranslatorInterface $translator,
         private readonly string $rssSourceUrl,
         private readonly RssChecksInterface $rssChecks,
-        private readonly LivesquawkClient $client
+        private readonly LivesquawkClient $client,
+        private readonly NewsProviderInterface $newsProvider,
         )
     {
     }
 
     public function __invoke(): Response
     {
-        dump($this->client->getAllFrom());
+        //$records = $this->client->getAllFrom()['data'];
+        dump($this->newsProvider->getLatestNews());
+        // foreach($records as $record) {
+        //     dump($this->translator->trans($record['title']));
+        //     return new JsonResponse();
+        // }
+
+        // dump($this->client->getAllFrom());
+
+
         // dump(simplexml_load_string(file_get_contents($this->rssSourceUrl)));
         // $currentRssState = file_get_contents($this->rssSourceUrl);
         // $hash = md5($currentRssState);
